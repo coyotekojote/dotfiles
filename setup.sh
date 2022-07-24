@@ -2,3 +2,4 @@
 
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/config/starship.toml ~/.config/starship.toml
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/config/fish/ ~/.config/
+ln -s ~/ghq/github.com/coyotekojote/dotfiles/config/brew/Brewfile ~/.Brewfile
