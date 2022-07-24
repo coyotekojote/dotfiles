@@ -2,9 +2,9 @@
 
 ## terminal
 
-- iterm2
+- [iterm2](https://iterm2.com/)
 
 ## shell
 
-- fish
-- starship
+- [fish](https://fishshell.com/)
+- [Starship](https://starship.rs/ja-JP/)
