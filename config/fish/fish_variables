@@ -1,6 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_gau:git\x20add\x20\x2du
+SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gd:git\x20diff
+SETUVAR _fish_abbr_gdno:git\x20diff\x20\x2d\x2dname\x2donly
+SETUVAR _fish_abbr_gl:git\x20log
+SETUVAR _fish_abbr_glp:git\x20log\x20\x2dp
+SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher
 SETUVAR _fisher_upgraded_to_4_4:\x1d
