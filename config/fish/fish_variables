@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_gau:git\x20add\x20\x2du
+SETUVAR _fish_abbr_gbr:git\x20branch
 SETUVAR _fish_abbr_gch:git\x20checkout
 SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gd:git\x20diff
