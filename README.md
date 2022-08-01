@@ -8,3 +8,6 @@
 
 - [fish](https://fishshell.com/)
 - [Starship](https://starship.rs/ja-JP/)
+
+## 使い方
+ `bash shell.sh` で一通りのセットアップ完了
