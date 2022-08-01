@@ -10,4 +10,4 @@
 - [Starship](https://starship.rs/ja-JP/)
 
 ## 使い方
- `bash shell.sh` で一通りのセットアップ完了
+ `bash setup.sh` で一通りのセットアップ完了
