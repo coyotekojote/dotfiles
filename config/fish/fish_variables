@@ -9,7 +9,7 @@ SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdno:git\x20diff\x20\x2d\x2dname\x2donly
 SETUVAR _fish_abbr_gl:git\x20log
 SETUVAR _fish_abbr_glp:git\x20log\x20\x2dp
-SETUVAR _fish_abbr_gpl:\x22review\x2drequested\x3a\x40me\x22\x20\x7c\x20awk\x20\x27\x7bprint\x20\x241\x7d\x27\x20\x7c\x20xargs\x20\x2dn\x201\x20gh\x20pr\x20view\x20\x2dw
+SETUVAR _fish_abbr_gpl:gh\x20pr\x20list\x20\x2dS\x20\x22review\x2drequested\x3a\x40me\x22\x20\x7c\x20awk\x20\x27\x7bprint\x20\x241\x7d\x27\x20\x7c\x20xargs\x20\x2dn\x201\x20gh\x20pr\x20view\x20\x2dw
 SETUVAR _fish_abbr_grv:gh\x20repo\x20view\x20\x2dw
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
