@@ -12,6 +12,11 @@ success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set
 [package]
 disabled = false
 
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+truncation_symbol = "…/"
+
 [git_branch]
 symbol = "🌱 "
 truncation_length = 30
