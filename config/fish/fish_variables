@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_abp:abbr\x20\x7c\x20peco
-SETUVAR _fish_abbr_bi:brew\x20install
+SETUVAR _fish_abbr_bi:bundle\x20install
 SETUVAR _fish_abbr_gau:git\x20add\x20\x2du
 SETUVAR _fish_abbr_gb:gh\x20browse
 SETUVAR _fish_abbr_gbr:git\x20branch
