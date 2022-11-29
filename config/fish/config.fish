@@ -24,3 +24,9 @@ function fish_user_key_bindings
   bind \cw peco_select_history
   bind \cg ghq_peco_repo
 end
+
+# node
+status --is-interactive; and source (anyenv init -|psub)
+set -x NODENV_ROOT $HOME/.anyenv/envs/nodenv
+set -x PATH $HOME/.anyenv/envs/nodenv/bin $PATH
+set -gx PATH $NODENV_ROOT/shims $PATH
