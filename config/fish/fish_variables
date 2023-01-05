@@ -8,6 +8,7 @@ SETUVAR _fish_abbr_gb:gh\x20browse
 SETUVAR _fish_abbr_gbr:git\x20branch
 SETUVAR _fish_abbr_gbra:git\x20branch\x20\x2da
 SETUVAR _fish_abbr_gch:git\x20checkout
+SETUVAR _fish_abbr_gcm:\x20git\x20rev\x2dparse\x20\x2d\x2dabbrev\x2dref\x20HEAD\x20\x3e\x20\x2e/\x2ecommit_template\x3bgit\x20commit
 SETUVAR _fish_abbr_gcom:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gd:git\x20diff
 SETUVAR _fish_abbr_gdno:git\x20diff\x20\x2d\x2dname\x2donly
