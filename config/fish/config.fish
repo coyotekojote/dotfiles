@@ -30,3 +30,6 @@ status --is-interactive; and source (anyenv init -|psub)
 set -x NODENV_ROOT $HOME/.anyenv/envs/nodenv
 set -x PATH $HOME/.anyenv/envs/nodenv/bin $PATH
 set -gx PATH $NODENV_ROOT/shims $PATH
+
+# rbenv
+status --is-interactive; and rbenv init - fish | source
