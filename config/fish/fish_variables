@@ -1,5 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/Users/yohei\x2eotake/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/yohei\x2eotake/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/yohei\x2eotake\x24
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_abp:abbr\x20\x7c\x20peco
 SETUVAR _fish_abbr_bi:bundle\x20install
@@ -20,9 +25,10 @@ SETUVAR _fish_abbr_gpum:git\x20pull\x20upstream\x20main
 SETUVAR _fish_abbr_grv:gh\x20repo\x20view\x20\x2dw
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_rbm:rubymine\x20\x2e/
+SETUVAR _fisher_jethrokuan_2F_z_files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_peco_files:\x7e/\x2econfig/fish/functions/peco_kill\x2efish\x1e\x7e/\x2econfig/fish/functions/peco_select_history\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dpeco
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dpeco\x1ejethrokuan/z
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
