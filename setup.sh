@@ -2,4 +2,4 @@
 
 brew install --cask ghostty
 
-~/.config/ghostty -> ~ghq/github.com/coyotekojote/dotfiles/.config/ghostty
+ln -s ~/ghq/github.com/coyotekojote/dotfiles//ghostty ~/.config/ghostty
