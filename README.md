@@ -1,10 +1,15 @@
 # dotfiles
 
-## terminal
+- どの環境でも共通で使いたいものの設定をまとめるためのリポジトリ
+
+
+## 管理対象
+
+### terminal
 
 - [ghostty](https://ghostty.org/)
 
-## shell
+### shell
 
 - zsh
 
@@ -13,4 +18,4 @@
 ### 初期設定時 
 
 - [Homebrew](https://brew.sh/ja/)をインストール
-- `bash setup.sh` で一通りのセットアップ完了
+- `bash setup.sh` を実行
