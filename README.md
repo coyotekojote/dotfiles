@@ -12,6 +12,7 @@
 
 ### 初期設定時 
 
+- [Homebrew](https://brew.sh/ja/)をインストール
 - `bash setup.sh` で一通りのセットアップ完了
 
 ### brewfile更新
