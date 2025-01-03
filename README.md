@@ -2,12 +2,11 @@
 
 ## terminal
 
-- [iterm2](https://iterm2.com/) → [ghostty](https://ghostty.org/)
+- [ghostty](https://ghostty.org/)
 
 ## shell
 
-- [fish](https://fishshell.com/) → zsh
-- ~~[Starship](https://starship.rs/ja-JP/)~~
+- zsh
 
 ## 使い方
 
