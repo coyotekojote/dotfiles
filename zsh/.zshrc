@@ -6,6 +6,7 @@ alias ll='ls -la'
 alias gd='git diff'
 alias gdno='git diff --name-only'
 alias gcm='git commit'
+alias gpo='git push origin HEAD'
 
 # path
 
