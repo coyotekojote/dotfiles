@@ -7,7 +7,6 @@ alias gd='git diff'
 alias gdno='git diff --name-only'
 alias gcm='git commit'
 
-
 # path
 
 export PATH="$HOME/.rbenv/bin:$PATH"
