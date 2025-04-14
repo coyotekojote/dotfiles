@@ -18,4 +18,5 @@
 ### 初期設定時 
 
 - [Homebrew](https://brew.sh/ja/)をインストール
+- このリポジトリをローカルにclone(ghqを使用する想定)
 - `bash setup.sh` を実行
