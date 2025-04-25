@@ -7,6 +7,8 @@ alias gch='git checkout'
 alias gd='git diff'
 alias gdno='git diff --name-only'
 alias gcm='git commit'
+alias gl='git log'
+alias glp='git log -p'
 alias gpo='git push origin HEAD'
 
 # gitのブランチ情報を表示する
