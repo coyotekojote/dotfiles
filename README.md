@@ -9,10 +9,12 @@
 
 - [ghostty](https://ghostty.org/)
 
+
 ### shell
 
 - zsh
 - 端末固有の設定等、git管理したくない項目がある場合には `/zsh/.zshrc.local` を作成してその中に記載する
+- `Control + ]` でghq配下のリポジトリを検索できる
 
 ## 使い方
 
