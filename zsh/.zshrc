@@ -3,6 +3,7 @@
 alias ll='ls -la'
 
 ## git
+alias gch='git checkout'
 alias gd='git diff'
 alias gdno='git diff --name-only'
 alias gcm='git commit'
