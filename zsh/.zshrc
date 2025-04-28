@@ -54,6 +54,6 @@ bindkey '^]' peco-src
 
 
 # 端末固有の設定ファイルがあれば読み込む
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
+if [[ -f ~/ghq/github.com/coyotekojote/dotfiles/zsh/.zshrc.local ]]; then
+  source ~/ghq/github.com/coyotekojote/dotfiles/zsh/.zshrc.local
 fi
