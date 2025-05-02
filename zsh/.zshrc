@@ -48,12 +48,31 @@ function peco-src() {
 # 定義した関数を Zsh Line Editor (zle) のウィジェットとして登録
 zle -N peco-src
 
-# キーバインドを設定 (^] は Ctrl + ])
+# キーバインドを設定 (ctrl-])
 bindkey '^]' peco-src
 
 
+
+# search a destination from cdr list
+function peco-get-destination-from-cdr() {
+  cdr -l | \
+  sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
+  peco --query "$LBUFFER"
+}
+
+# 過去に実行したコマンドを選択。(ctrl-r)
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 # 端末固有の設定ファイルがあれば読み込む
 if [[ -f ~/ghq/github.com/coyotekojote/dotfiles/zsh/.zshrc.local ]]; then
   source ~/ghq/github.com/coyotekojote/dotfiles/zsh/.zshrc.local
 fi
+
+# Created by `pipx` on 2025-05-01 02:03:48
+export PATH="$PATH:/Users/y-otake/.local/bin"
