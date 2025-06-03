@@ -22,7 +22,7 @@ PROMPT='%~ ${vcs_info_msg_0_} %# '
 # path
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
-
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # peco
 # ghq + peco でリポジトリに移動する関数
