@@ -25,6 +25,11 @@ IMPORTANT: セキュリティベストプラクティスに従う
 - Prefer clarity over cleverness
 - Write self-documenting code without unnecessary comments
 
+#### ruby
+- Ruby3.1以降のプロジェクトでは、ハッシュリテラルとキーワード引数が省略可能な場合には省略する
+- Serializerでは単純な属性の場合、ブロックではなく`attributes`メソッドを使用する（例: `attributes :id, :name`）
+
+
 ### Git Workflow
 - Write clear, concise commit messages
 - Follow conventional commit format when applicable
