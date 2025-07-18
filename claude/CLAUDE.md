@@ -49,7 +49,18 @@ IMPORTANT: セキュリティベストプラクティスに従う
 
 ## Language-Specific Guidelines
 
-WIP
+### OpenAPI / Swagger
+- OpenAPI 3.0では、`$ref`と他のキーワード（`nullable`など）を同じレベルに書くと、`$ref`が他のキーワードを無視する
+- nullableな参照型を定義する場合は、以下のようにallOfを使用する：
+  ```yaml
+  field_name:
+    type: object
+    nullable: true
+    allOf:
+      - $ref: './path/to/schema.yaml#/components/schemas/SchemaName'
+    description: 説明文
+  ```
+- `nullable: true`を使用する際は必ず`type`フィールドも定義すること
 
 ## Security Reminders
 - Never expose API keys or secrets
