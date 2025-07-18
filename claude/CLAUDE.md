@@ -13,6 +13,7 @@ NEVER: テストなしで本番環境にデプロイしない
 YOU MUST: すべての公開APIにドキュメントを記載
 YOU MUST: エラーハンドリングを実装
 YOU MUST: 変更前に既存テストが通ることを確認
+YOU MUST: 日本語で応答すること
 
 ### IMPORTANT（重要事項）：
 IMPORTANT: パフォーマンスへの影響を考慮
