@@ -1,3 +1,7 @@
+# zsh completion system の初期化（.zshrc.localよりも先に読み込む）
+autoload -Uz compinit
+compinit
+
 # alias
 
 alias ll='ls -la'
@@ -76,3 +80,5 @@ fi
 
 # Created by `pipx` on 2025-05-01 02:03:48
 export PATH="$PATH:/Users/y-otake/.local/bin"
+
+eval "$(mise activate zsh)"
