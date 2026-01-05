@@ -22,3 +22,6 @@ copy-on-select = clipboard
 macos-non-native-fullscreen = true
 
 macos-window-buttons = hidden
+
+# タブを閉じる際の確認ダイアログを無効化
+confirm-close-surface = false
