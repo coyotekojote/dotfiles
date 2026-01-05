@@ -18,3 +18,7 @@ font-thicken
 mouse-hide-while-typing = true
 
 copy-on-select = clipboard
+
+macos-non-native-fullscreen = true
+
+macos-window-buttons = hidden
