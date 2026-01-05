@@ -13,3 +13,4 @@ font-feature = -dlig
 
 font-thicken
 
+mouse-hide-while-typing = true
