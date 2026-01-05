@@ -10,6 +10,7 @@ font-size = 20
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+keybind = shift+enter=text:\x1b\r
 
 # フォントは太いほうが偉い
 font-thicken
@@ -18,8 +19,6 @@ font-thicken
 mouse-hide-while-typing = true
 
 copy-on-select = clipboard
-
-macos-non-native-fullscreen = true
 
 macos-window-buttons = hidden
 
