@@ -11,6 +11,10 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
+# フォントは太いほうが偉い
 font-thicken
 
+# タイピング中はマウスカーソルいらない
 mouse-hide-while-typing = true
+
+copy-on-select = clipboard
