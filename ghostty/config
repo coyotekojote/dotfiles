@@ -4,7 +4,7 @@ macos-non-native-fullscreen = true
 theme = solarized dark higher contrast
 macos-titlebar-style = tabs
 keybind = global:option+space=toggle_visibility
-font-size = 16
+font-size = 20
 
 # リガチャを無効化
 font-feature = -calt
