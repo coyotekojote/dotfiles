@@ -10,6 +10,7 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/zsh ~/.config/
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/ghostty ~/.config/
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/mise ~/.config/
 
-# Create symlink for CLAUDE.md
+# Create symlinks for Claude Code
 mkdir -p ~/.claude
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/commands ~/.claude/commands
