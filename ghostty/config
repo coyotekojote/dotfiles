@@ -17,6 +17,7 @@ font-thicken
 
 # タイピング中はマウスカーソルいらない
 mouse-hide-while-typing = true
+cursor-style = block
 
 copy-on-select = clipboard
 
