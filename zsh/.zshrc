@@ -15,6 +15,9 @@ alias gl='git log'
 alias glp='git log -p'
 alias gpo='git push origin HEAD'
 
+# claude
+alias cl='claude'
+
 # gitのブランチ情報を表示する
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
