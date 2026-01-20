@@ -4,17 +4,6 @@
     "CLOUD_ML_REGION": "us-east5",
     "ANTHROPIC_VERTEX_PROJECT_ID": "smarthr-ai-lab"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bun x ccusage statusline"
-  },
-  "enabledPlugins": {
-    "code-review@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true
-  },
-  "language": "japanese",
-  "model": "claude-opus-4-5@20251101",
   "hooks": {
     "Notification": [
       {
@@ -37,5 +26,15 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bun x ccusage statusline"
+  },
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true
+  },
+  "language": "japanese"
 }
