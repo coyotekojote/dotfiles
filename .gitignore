@@ -2,3 +2,8 @@
 zsh/.zsh_history
 zsh/.zshrc.local
 zsh/.zcompdump
+
+# Vim temporary files
+*.swp
+*.swo
+*~
