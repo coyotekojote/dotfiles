@@ -17,8 +17,7 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/commands ~/.claude/commands
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.json ~/.claude/settings.json
 
 # Create symlinks for Claude Code skills
-mkdir -p ~/.claude/skills
-ln -sf ~/ghq/github.com/coyotekojote/dotfiles/claude/skills/creating-skills ~/.claude/skills/creating-skills
+ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/skills ~/.claude/skills
 
 # Raycast Script Commands
 mkdir -p ~/.config/raycast
