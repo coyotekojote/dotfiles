@@ -9,8 +9,8 @@
 `setup.sh` を実行するか、手動で以下を実行:
 
 ```bash
-mkdir -p ~/raycast
-ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/raycast/script
+mkdir -p ~/.config/raycast
+ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/.config/raycast/script
 ```
 
 ### 2. Raycast への登録
@@ -18,7 +18,7 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/raycast/script
 1. Raycast を開く（`⌘ + Space`）
 2. 「Extensions」と入力して「Raycast Settings」→「Extensions」を開く
 3. 左下の `+` ボタン → `Add Script Directory`
-4. `~/raycast/script` を選択
+4. `~/.config/raycast/script` を選択
 
 ### 3. 確認
 

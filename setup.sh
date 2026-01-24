@@ -21,5 +21,5 @@ mkdir -p ~/.claude/skills
 ln -sf ~/ghq/github.com/coyotekojote/dotfiles/claude/skills/creating-skills ~/.claude/skills/creating-skills
 
 # Raycast Script Commands
-mkdir -p ~/raycast
-ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/raycast/script
+mkdir -p ~/.config/raycast
+ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/.config/raycast/script
