@@ -14,7 +14,7 @@ allowed-tools: Write, Read, Glob
 
 ## 保存先
 
-`/Users/coyotekojote/ghq/github.com/coyotekojote/obsidian-vault/inbox/`
+`~/ghq/github.com/coyotekojote/obsidian-vault/inbox/`
 
 ## 手順
 
@@ -50,7 +50,7 @@ allowed-tools: Write, Read, Glob
    ```
 
 5. **保存先に書き込み**
-   - Write ツールを使って `/Users/coyotekojote/ghq/github.com/coyotekojote/obsidian-vault/inbox/` に保存
+   - Write ツールを使って `~/ghq/github.com/coyotekojote/obsidian-vault/inbox/` に保存
 
 6. **完了を報告**
    - 保存したファイルパスを表示
