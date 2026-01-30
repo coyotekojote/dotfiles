@@ -10,7 +10,7 @@ allowed-tools: Bash, Write, Read, Glob
 # Serena MCP プロジェクトセットアップ
 
 カレントディレクトリのプロジェクトにSerena MCPの設定ファイルを作成する。
-グローバルインストール（`claude mcp add --scope user`）は手動で済んでいる前提。
+グローバルインストール（`claude mcp add --scope user serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context claude-code`）は手動で済んでいる前提。
 
 ## 手順
 
