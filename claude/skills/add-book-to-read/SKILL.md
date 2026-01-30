@@ -14,7 +14,7 @@ allowed-tools: Write, Read, Glob
 
 ## 保存先
 
-`/Users/coyotekojote/ghq/github.com/coyotekojote/obsidian-vault/inbox/`
+`~/ghq/github.com/coyotekojote/obsidian-vault/inbox/`
 
 ## 手順
 
