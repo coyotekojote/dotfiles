@@ -24,7 +24,8 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '(%b)'
-PROMPT='%~ ${vcs_info_msg_0_} %# '
+PROMPT='%B%~ ${vcs_info_msg_0_} %# %b'
+zle_highlight+=(default:bold)
 
 # path
 export PATH="$HOME/.rbenv/bin:$PATH"
