@@ -37,17 +37,19 @@ allowed-tools: Write, Read, Glob
    ---
    created: YYYY-MM-DD HH:mm
    source: claude-code
-   tags:
-     - claudeメモ
    ---
 
    # タイトル
 
    内容
 
-   ## 関連
-   -
+   #claudeメモ
    ```
+
+   **タグについて:**
+   - タグはYAML frontmatterではなく、ドキュメント末尾にインラインタグ（`#タグ名`）を記載
+   - `#claudeメモ` は必ず含める
+   - 内容に応じて適切なタグを追加（例: `#レシピ` `#作りたい` `#TIL` など）
 
 5. **保存先に書き込み**
    - Write ツールを使って `~/ghq/github.com/coyotekojote/obsidian-vault/inbox/` に保存
