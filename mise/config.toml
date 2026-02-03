@@ -2,3 +2,10 @@
 legacy_version_file = true
 idiomatic_version_file_enable_tools = ["ruby"]
 
+[tools]
+ripgrep = "latest"
+uv = "latest"
+fd = "latest"
+fzf = "latest"
+lazygit = "latest"
+tree-sitter = "latest"
