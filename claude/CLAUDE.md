@@ -2,6 +2,10 @@
 
 This file contains common instructions and context for Claude to use across all repositories.
 
+## Planning & Workflow
+
+When a plan is created, output it to a file (e.g., plan.md) and optionally spawn a sub-agent to review it before execution. Do not just explain the plan inline.
+
 ## General Guidelines
 
 ### NEVER（絶対禁止）
