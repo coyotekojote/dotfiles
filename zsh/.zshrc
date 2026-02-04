@@ -15,6 +15,9 @@ alias gl='git log'
 alias glp='git log -p'
 alias gpo='git push origin HEAD'
 
+# neovim
+alias nv='nvim'
+
 # claude
 alias cl='claude'
 
