@@ -6,6 +6,8 @@ This file contains common instructions and context for Claude to use across all 
 
 When a plan is created, output it to a file (e.g., plan.md) and optionally spawn a sub-agent to review it before execution. Do not just explain the plan inline.
 
+Before starting complex tasks, create a todo list of all subtasks for this work. Check off each one as you complete it. If we run out of time, summarize what's left.
+
 ## General Guidelines
 
 ### NEVER（絶対禁止）
