@@ -3,6 +3,9 @@ zsh/.zsh_history
 zsh/.zshrc.local
 zsh/.zcompdump
 
+# Claude Code
+**/.claude/settings.local.json
+
 # Vim temporary files
 *.swp
 *.swo
