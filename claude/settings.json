@@ -15,6 +15,7 @@
       "Bash(gh run view:*)",
       "Bash(gh run list:*)",
       "Bash(ls:*)",
+      "Bash(tree:*)",
       "Bash(echo:*)",
       "mcp__serena__get_current_config",
       "mcp__serena__check_onboarding_performed",
@@ -61,5 +62,6 @@
     "code-simplifier@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true
   },
-  "language": "japanese"
+  "language": "japanese",
+  "model": "claude-opus-4-5@20251101"
 }
