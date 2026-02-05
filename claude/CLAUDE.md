@@ -10,21 +10,21 @@ Before starting complex tasks, create a todo list of all subtasks for this work.
 
 ## General Guidelines
 
-### NEVER（絶対禁止）
-NEVER: パスワードやAPIキーをハードコーディングしない
-NEVER: ユーザーの確認なしにデータを削除しない
-NEVER: テストなしで本番環境にデプロイしない
+### 絶対禁止（NEVER）
+- パスワードやAPIキーをハードコーディングしない
+- ユーザーの確認なしにデータを削除しない
+- テストなしで本番環境にデプロイしない
 
-### YOU MUST（必須事項）
-YOU MUST: すべての公開APIにドキュメントを記載
-YOU MUST: エラーハンドリングを実装
-YOU MUST: 変更前に既存テストが通ることを確認
-YOU MUST: 日本語で応答すること
+### 必須事項（YOU MUST）
+- すべての公開APIにドキュメントを記載
+- エラーハンドリングを実装
+- 変更前に既存テストが通ることを確認
+- 日本語で応答すること
 
-### IMPORTANT（重要事項）：
-IMPORTANT: パフォーマンスへの影響を考慮
-IMPORTANT: 後方互換性を維持
-IMPORTANT: セキュリティベストプラクティスに従う
+### 重要事項（IMPORTANT）
+- パフォーマンスへの影響を考慮
+- 後方互換性を維持
+- セキュリティベストプラクティスに従う
 
 ### Code Style
 - Follow existing code conventions in each project
@@ -32,13 +32,13 @@ IMPORTANT: セキュリティベストプラクティスに従う
 - Prefer clarity over cleverness
 - Write self-documenting code without unnecessary comments
 
-#### ruby
+#### Ruby
 - Ruby3.1以降のプロジェクトでは、ハッシュリテラルとキーワード引数が省略可能な場合には省略する
   - キーワード引数省略記法: 変数名とキーワード名が同じ場合は省略（例: `foo(param:)` は `foo(param: param)` と同じ）
   - ハッシュ値省略記法: キーと値の変数名が同じ場合は省略（例: `{ name: }` は `{ name: name }` と同じ）
 - Serializerでは単純な属性の場合、ブロックではなく`attributes`メソッドを使用する（例: `attributes :id, :name`）
 
-##### リファクタリング原則
+### リファクタリング原則
 - **サービスクラスの使用**: 原則として新規にサービスクラス（`app/services`）を作成しない。既存のモデル内でprivateメソッドによる責務分離を優先する
 - **エラー処理の統一**:
   - 事前バリデーション + 早期returnパターンを使用
@@ -50,7 +50,6 @@ IMPORTANT: セキュリティベストプラクティスに従う
 - **メソッド名の簡潔化**:
   - メソッドの役割が名詞のみで表現できる場合は動詞を省略（例: `generate_notice_message` → `notice_message`）
   - 意図が明確であれば短い名前を優先
-
 
 ### Git Workflow
 - Write clear, concise commit messages
@@ -88,6 +87,10 @@ IMPORTANT: セキュリティベストプラクティスに従う
 
 ## Language-Specific Guidelines
 
+（言語固有のガイドラインはCode Styleセクションに記載）
+
+## Specification Guidelines
+
 ### OpenAPI / Swagger
 - OpenAPI 3.0では、`$ref`と他のキーワード（`nullable`など）を同じレベルに書くと、`$ref`が他のキーワードを無視する
 - nullableな参照型を定義する場合は、以下のようにallOfを使用する：
@@ -102,6 +105,6 @@ IMPORTANT: セキュリティベストプラクティスに従う
 - `nullable: true`を使用する際は必ず`type`フィールドも定義すること
 
 ## Security Reminders
-- Never expose API keys or secrets
-- Use environment variables for sensitive configuration
-- Review changes for security implications before committing
+- APIキーやシークレットを露出しない
+- 機密設定には環境変数を使用
+- コミット前にセキュリティへの影響を確認
