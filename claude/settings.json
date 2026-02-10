@@ -62,6 +62,5 @@
     "code-simplifier@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true
   },
-  "language": "japanese",
-  "model": "claude-opus-4-5@20251101"
+  "language": "japanese"
 }
