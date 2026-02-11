@@ -13,6 +13,9 @@
 ### shell
 
 - zsh
+- プラグイン管理には[sheldon](https://github.com/rossmacarthur/sheldon)を使用
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) — 入力中に履歴ベースの候補をグレー表示
+  - [zsh-completions](https://github.com/zsh-users/zsh-completions) — 追加のTab補完定義
 - 端末固有の設定等、git管理したくない項目がある場合には `/zsh/.zshrc.local` を作成してその中に記載する
 - `Control + ]` でghq配下のリポジトリを検索できる
 
