@@ -5,7 +5,18 @@ brew install nodebrew
 brew install mise
 brew install sheldon
 
-echo "ZDOTDIR=$HOME/.config/zsh" | sudo tee /etc/zshenv > /dev/null
+cat << 'ZSHENV' | sudo tee /etc/zshenv > /dev/null
+# Ghostty shell integrationとの競合回避
+# Ghosttyはzsh起動前にZDOTDIRを自身のintegrationディレクトリに一時設定し、
+# GHOSTTY_ZSH_ZDOTDIRに保存された値でZDOTDIRを復元する。
+# /etc/zshenvで無条件にZDOTDIRを上書きするとintegrationが読み込まれないため、
+# Ghostty環境ではGHOSTTY_ZSH_ZDOTDIRに正しいパスを設定してintegration側に復元を委ねる。
+if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
+    export GHOSTTY_ZSH_ZDOTDIR="$HOME/.config/zsh"
+else
+    export ZDOTDIR="$HOME/.config/zsh"
+fi
+ZSHENV
 
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/zsh ~/.config/
