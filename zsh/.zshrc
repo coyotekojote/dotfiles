@@ -1,6 +1,15 @@
+eval "$(sheldon source)"
+
 # zsh completion system の初期化（.zshrc.localよりも先に読み込む）
 autoload -Uz compinit
 compinit
+
+# history
+HISTFILE=~/ghq/github.com/coyotekojote/dotfiles/zsh/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt share_history
 
 # alias
 
