@@ -2,6 +2,7 @@
 zsh/.zsh_history
 zsh/.zshrc.local
 zsh/.zcompdump
+zsh/.zcompcache/
 
 # Claude Code
 **/.claude/settings.local.json
