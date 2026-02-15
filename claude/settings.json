@@ -63,5 +63,6 @@
     "feature-dev@claude-plugins-official": true
   },
   "language": "japanese",
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "model": "claude-opus-4-5@20251101"
 }
