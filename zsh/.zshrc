@@ -101,7 +101,7 @@ export PATH="$PATH:/Users/y-otake/.local/bin"
 eval "$(mise activate zsh)"
 
 # bun completions
-[ -s "/Users/yohei.otake.842/.bun/_bun" ] && source "/Users/yohei.otake.842/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
