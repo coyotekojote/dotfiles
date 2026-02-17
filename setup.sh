@@ -34,6 +34,16 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.json ~/.claude/sett
 # Create symlinks for Claude Code skills
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/skills ~/.claude/skills
 
+# Create ~/.claude/settings.local.json if not exists (machine-local, not git-managed)
+if [ ! -f "$HOME/.claude/settings.local.json" ]; then
+  cat > "$HOME/.claude/settings.local.json" <<'EOF'
+{
+  "model": "sonnet"
+}
+EOF
+  echo "Created ~/.claude/settings.local.json (machine-local settings)"
+fi
+
 # Raycast Script Commands
 mkdir -p ~/.config/raycast
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/raycast/script ~/.config/raycast/script
