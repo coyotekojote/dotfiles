@@ -29,5 +29,8 @@ confirm-close-surface = false
 # 画面分割したときにpathが引き継がれる
 window-inherit-working-directory = true
 
+# 非アクティブなsplitを少し暗くする
+unfocused-split-opacity = 0.85
+
 # 起動時に前の作業フォルダを引き継ぐ
 window-save-state = always
