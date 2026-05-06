@@ -5,6 +5,15 @@
 
 ## 管理対象
 
+### パッケージ管理
+
+- [Nix](https://nixos.org/) + [home-manager](https://github.com/nix-community/home-manager) — パッケージ管理のメイン
+  - 設定は `nix/home.nix` で管理
+  - パッケージ追加後は `home-manager switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote` を実行
+  - `nix flake update` でパッケージ更新
+- [Homebrew](https://brew.sh/ja/) — Nixにないもの（GUIアプリ等）の補完用
+- [mise](https://mise.jdx.dev/) — Ruby等ランタイムのバージョン管理
+
 ### terminal
 
 - [ghostty](https://ghostty.org/)
@@ -32,8 +41,12 @@
 
 ## 使い方
 
-### 初期設定時 
+### 初期設定時
 
-- [Homebrew](https://brew.sh/ja/)をインストール
-- このリポジトリをローカルにclone(ghqを使用する想定)
-- `bash setup.sh` を実行
+1. [Nix](https://determinate.systems/nix-installer/) をインストール
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+   ```
+2. [Homebrew](https://brew.sh/ja/) をインストール
+3. このリポジトリをローカルにclone（ghqを使用する想定）
+4. `bash setup.sh` を実行
