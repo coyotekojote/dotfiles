@@ -15,6 +15,10 @@
     yt-dlp
     rclone
     hugo
+    gemini-cli
+
+    # Editor
+    neovim
 
     # Dev tools
     deno

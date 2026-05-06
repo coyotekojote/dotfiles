@@ -40,8 +40,6 @@ PROMPT='%B%~ ${vcs_info_msg_0_} %# %b'
 zle_highlight+=(default:bold)
 
 # path
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
