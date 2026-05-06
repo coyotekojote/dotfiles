@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
+# Nix (https://determinate.systems/nix-installer/)
+# curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+# 上記でNixをインストール後、新しいシェルを開いてから以下を実行
+
+# home-manager（初回のみ）
+nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote
+
+# Homebrew（Nixにないものの補完用）
 brew install --cask ghostty
 brew install nodebrew
 brew install mise
-brew install sheldon
 
 cat << 'ZSHENV' | sudo tee /etc/zshenv > /dev/null
 # Ghostty shell integrationとの競合回避
