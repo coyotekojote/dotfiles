@@ -21,6 +21,7 @@
     neovim
 
     # Dev tools
+    mise
     deno
 
     # Media

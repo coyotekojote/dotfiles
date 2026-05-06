@@ -10,7 +10,6 @@ nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotf
 # Homebrew（Nixにないものの補完用）
 brew install --cask ghostty
 brew install nodebrew
-brew install mise
 
 cat << 'ZSHENV' | sudo tee /etc/zshenv > /dev/null
 # Ghostty shell integrationとの競合回避
