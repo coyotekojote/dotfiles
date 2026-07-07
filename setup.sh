@@ -37,23 +37,39 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.m
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/commands ~/.claude/commands
 
 # Claude settings: マシンごとに別ファイルを使う
-# - private: claude/settings.private.json（git管理）
-# - work:    claude/settings.work.json（gitignore、仕事用の情報を含むため）
+# - private: claude/settings.private.json（このリポジトリ）
+# - work:    dotfiles-private側のclaude/settings.work.json（仕事用の情報を含むため非公開リポジトリで管理）
 # プロファイルは ~/.dotfiles-profile に "private" か "work" を書いて指定
 if [ ! -f "$HOME/.dotfiles-profile" ]; then
   read -rp "This machine's profile (private/work): " profile
   echo "$profile" > "$HOME/.dotfiles-profile"
 fi
 PROFILE=$(cat "$HOME/.dotfiles-profile")
-CLAUDE_SETTINGS=~/ghq/github.com/coyotekojote/dotfiles/claude/settings.${PROFILE}.json
-if [ "$PROFILE" = "work" ] && [ ! -f "$CLAUDE_SETTINGS" ]; then
-  cp ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.private.json "$CLAUDE_SETTINGS"
-  echo "Created $CLAUDE_SETTINGS from private template (edit for work use)"
+PRIVATE_REPO=~/ghq/github.com/coyotekojote/dotfiles-private
+if [ "$PROFILE" = "work" ]; then
+  CLAUDE_SETTINGS="$PRIVATE_REPO/claude/settings.work.json"
+  if [ ! -f "$CLAUDE_SETTINGS" ]; then
+    mkdir -p "$PRIVATE_REPO/claude"
+    cp ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.private.json "$CLAUDE_SETTINGS"
+    echo "Created $CLAUDE_SETTINGS from private template (edit for work use)"
+  fi
+else
+  CLAUDE_SETTINGS=~/ghq/github.com/coyotekojote/dotfiles/claude/settings.private.json
 fi
 ln -sf "$CLAUDE_SETTINGS" ~/.claude/settings.json
 
-# Create symlinks for Claude Code skills
-ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/skills ~/.claude/skills
+# Claude Code skills: 公開・非公開リポジトリ両方からスキルごとに個別リンク
+mkdir -p ~/.claude/skills
+for skill in ~/ghq/github.com/coyotekojote/dotfiles/claude/skills/*/; do
+  ln -sfn "$skill" ~/.claude/skills/"$(basename "$skill")"
+done
+
+# Private dotfiles overlay (https://github.com/coyotekojote/dotfiles-private)
+if [ -d "$PRIVATE_REPO/claude/skills" ]; then
+  for skill in "$PRIVATE_REPO"/claude/skills/*/; do
+    [ -d "$skill" ] && ln -sfn "$skill" ~/.claude/skills/"$(basename "$skill")"
+  done
+fi
 
 # Create ~/.claude/settings.local.json if not exists (machine-local, not git-managed)
 if [ ! -f "$HOME/.claude/settings.local.json" ]; then

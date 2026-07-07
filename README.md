@@ -36,6 +36,13 @@
       path = ~/.gitconfig-work
     ```
 
+### Claude Code
+
+- 設定はマシンプロファイル（`~/.dotfiles-profile` の `private` / `work`）で切り替え
+  - private: このリポジトリの `claude/settings.private.json`
+  - work: [dotfiles-private](https://github.com/coyotekojote/dotfiles-private)（非公開）の `claude/settings.work.json`
+- 非公開のスキル等は dotfiles-private を隣にcloneしておくと `setup.sh` が重ねてリンクする
+
 ## 使い方
 
 ### 初期設定時
@@ -46,4 +53,5 @@
    ```
 2. [Homebrew](https://brew.sh/ja/) をインストール
 3. このリポジトリをローカルにclone（ghqを使用する想定）
+   - 非公開設定を使う場合は [dotfiles-private](https://github.com/coyotekojote/dotfiles-private) も同じ階層にclone
 4. `bash setup.sh` を実行
