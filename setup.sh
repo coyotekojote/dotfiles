@@ -35,7 +35,22 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/nvim ~/.config/
 mkdir -p ~/.claude
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/commands ~/.claude/commands
-ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.json ~/.claude/settings.json
+
+# Claude settings: マシンごとに別ファイルを使う
+# - private: claude/settings.private.json（git管理）
+# - work:    claude/settings.work.json（gitignore、仕事用の情報を含むため）
+# プロファイルは ~/.dotfiles-profile に "private" か "work" を書いて指定
+if [ ! -f "$HOME/.dotfiles-profile" ]; then
+  read -rp "This machine's profile (private/work): " profile
+  echo "$profile" > "$HOME/.dotfiles-profile"
+fi
+PROFILE=$(cat "$HOME/.dotfiles-profile")
+CLAUDE_SETTINGS=~/ghq/github.com/coyotekojote/dotfiles/claude/settings.${PROFILE}.json
+if [ "$PROFILE" = "work" ] && [ ! -f "$CLAUDE_SETTINGS" ]; then
+  cp ~/ghq/github.com/coyotekojote/dotfiles/claude/settings.private.json "$CLAUDE_SETTINGS"
+  echo "Created $CLAUDE_SETTINGS from private template (edit for work use)"
+fi
+ln -sf "$CLAUDE_SETTINGS" ~/.claude/settings.json
 
 # Create symlinks for Claude Code skills
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/skills ~/.claude/skills

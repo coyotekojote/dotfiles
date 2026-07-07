@@ -6,6 +6,7 @@ zsh/.zcompcache/
 
 # Claude Code
 **/.claude/settings.local.json
+claude/settings.work.json
 
 # Vim temporary files
 *.swp

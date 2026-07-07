@@ -29,6 +29,7 @@
       "mcp__serena__search_for_pattern"
     ]
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "Notification": [
       {
@@ -63,5 +64,9 @@
     "feature-dev@claude-plugins-official": true
   },
   "language": "japanese",
-  "effortLevel": "medium"
+  "tui": "fullscreen",
+  "editorMode": "vim",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
