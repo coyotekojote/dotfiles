@@ -11,6 +11,10 @@ nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotf
 brew install --cask ghostty
 brew install nodebrew
 
+# ax — AI時代のcurl（https://github.com/yusukebe/ax）
+# NixにもHomebrewにも無いため公式インストーラで~/.local/binに導入
+curl -fsSL https://ax.yusuke.run/install | sh
+
 cat << 'ZSHENV' | sudo tee /etc/zshenv > /dev/null
 # Ghostty shell integrationとの競合回避
 # Ghosttyはzsh起動前にZDOTDIRを自身のintegrationディレクトリに一時設定し、
