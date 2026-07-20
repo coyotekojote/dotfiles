@@ -16,6 +16,7 @@
     rclone
     hugo
     gemini-cli
+    herdr
 
     # Editor
     neovim
