@@ -5,7 +5,8 @@
 # 上記でNixをインストール後、新しいシェルを開いてから以下を実行
 
 # home-manager（初回のみ）
-nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote
+# --impure: home.nixがユーザー名/ホームを環境変数から取得するため必須
+nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote --impure
 
 # Homebrew（Nixにないものの補完用）
 brew install --cask ghostty

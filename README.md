@@ -6,7 +6,9 @@
 
 - [Nix](https://nixos.org/) + [home-manager](https://github.com/nix-community/home-manager) — パッケージ管理のメイン
   - 設定は `nix/home.nix` で管理
-  - パッケージ追加後は `home-manager switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote` を実行
+    - ユーザー名/ホームディレクトリは環境変数（`USER`/`HOME`）から取得するため、複数マシンで同じ設定を使い回せる
+  - パッケージ追加後は `home-manager switch --flake ~/ghq/github.com/coyotekojote/dotfiles/nix#coyotekojote --impure` を実行
+    - `--impure` は `home.nix` が環境変数を参照するため必須
   - `nix flake update` でパッケージ更新
 - [Homebrew](https://brew.sh/ja/) — Nixにないもの（GUIアプリ等）の補完用
 - [mise](https://mise.jdx.dev/) — Ruby等ランタイムのバージョン管理
