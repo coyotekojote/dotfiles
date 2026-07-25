@@ -1,110 +1,26 @@
-# CLAUDE.md - Global Configuration for Claude
+# CLAUDE.md - 全リポジトリ共通
 
-This file contains common instructions and context for Claude to use across all repositories.
+## 安全側の絶対ルール
 
-## Planning & Workflow
-
-When a plan is created, output it to a file (e.g., plan.md) and optionally spawn a sub-agent to review it before execution. Do not just explain the plan inline.
-
-Before starting complex tasks, create a todo list of all subtasks for this work. Check off each one as you complete it. If we run out of time, summarize what's left.
-
-## General Guidelines
-
-### 絶対禁止（NEVER）
-- パスワードやAPIキーをハードコーディングしない
+- パスワード・APIキー・シークレットをハードコーディングしない
 - ユーザーの確認なしにデータを削除しない
-- テストなしで本番環境にデプロイしない
+- テストを通さずに本番環境へデプロイしない
+- テストを通すためだけのハードコードを本番コードに入れない（`if (testMode)` のような分岐、テスト専用のマジックナンバー）。環境変数や設定ファイルで環境を分離する
 
-### 必須事項（YOU MUST）
-- すべての公開APIにドキュメントを記載
-- エラーハンドリングを実装
-- 変更前に既存テストが通ることを確認
-- 日本語で応答すること
+## 進め方
 
-### 重要事項（IMPORTANT）
-- パフォーマンスへの影響を考慮
-- 後方互換性を維持
-- セキュリティベストプラクティスに従う
+- 計画を立てたら、インラインで説明するだけでなくファイル（`plan.md` など）に出力する。必要なら実行前にサブエージェントにレビューさせる
+- 複雑なタスクは着手前にサブタスクのTODOリストを作り、完了ごとに消し込む。途中で終わる場合は残りを要約する
+- 仕様が不明な点は、仮の実装で進めずユーザーに確認する
 
-### Code Style
-- Follow existing code conventions in each project
-- Use consistent indentation (check project's .editorconfig or existing code)
-- Prefer clarity over cleverness
-- Write self-documenting code without unnecessary comments
+## テスト
 
-#### Ruby
-- Ruby3.1以降のプロジェクトでは、ハッシュリテラルとキーワード引数が省略可能な場合には省略する
-  - キーワード引数省略記法: 変数名とキーワード名が同じ場合は省略（例: `foo(param:)` は `foo(param: param)` と同じ）
-  - ハッシュ値省略記法: キーと値の変数名が同じ場合は省略（例: `{ name: }` は `{ name: name }` と同じ）
-- Serializerでは単純な属性の場合、ブロックではなく`attributes`メソッドを使用する（例: `attributes :id, :name`）
+- `expect(true).toBe(true)` のような、何も検証していないアサーションを書かない。各ケースは具体的な入力と期待出力を検証する
+- 境界値・異常系・エラーケースも書く
 
-### リファクタリング原則
-- **サービスクラスの使用**: 原則として新規にサービスクラス（`app/services`）を作成しない。既存のモデル内でprivateメソッドによる責務分離を優先する
-- **エラー処理の統一**:
-  - 事前バリデーション + 早期returnパターンを使用
-  - 例外を投げる前にバリデーションで弾けるものは弾く
-  - サイレントな失敗（`return {}`等）を避け、明示的なエラー通知または早期returnを使用
-- **重複コードの共通化**:
-  - 同じパターンの処理（通知、API呼び出し等）は共通メソッドに抽出
-  - 共通パラメータを持つメソッドは基底メソッドを作成して委譲
-- **メソッド名の簡潔化**:
-  - メソッドの役割が名詞のみで表現できる場合は動詞を省略（例: `generate_notice_message` → `notice_message`）
-  - 意図が明確であれば短い名前を優先
+## 言語・フレームワーク固有の規約
 
-### Git Workflow
-- Write clear, concise commit messages
-- Follow conventional commit format when applicable
-- Always check git status before committing
-- Never commit sensitive information (API keys, passwords, etc.)
+段階的に読み込む。詳細は該当スキルを参照：
 
-### Testing
-- Run tests before making changes when possible
-- Add tests for new functionality
-- Ensure all tests pass before considering work complete
-
-#### テストコードの品質
-- テストは必ず実際の機能を検証すること
-- `expect(true).toBe(true)` のような意味のないアサーションは絶対に書かない
-- 各テストケースは具体的な入力と期待される出力を検証すること
-#### ハードコーディングの禁止
-- テストを通すためだけのハードコードは絶対に禁止
-- 本番コードに `if (testMode)` のような条件分岐を入れない
-- テスト用の特別な値（マジックナンバー）を本番コードに埋め込まない
-- 環境変数や設定ファイルを使用して、テスト環境と本番環境を適切に分離すること
-#### テスト実装の原則
-- テストが失敗する状態から始めること（Red-Green-Refactor）
-- 境界値、異常系、エラーケースも必ずテストすること
-- カバレッジだけでなく、実際の品質を重視すること
-- テストケース名は何をテストしているか明確に記述すること
-#### 実装前の確認
-- 機能の仕様を正しく理解してからテストを書くこと
-- 不明な点があれば、仮の実装ではなく、ユーザーに確認すること
-
-### Documentation
-- Update documentation when changing functionality
-- Keep README files current
-- Document breaking changes clearly
-
-## Language-Specific Guidelines
-
-（言語固有のガイドラインはCode Styleセクションに記載）
-
-## Specification Guidelines
-
-### OpenAPI / Swagger
-- OpenAPI 3.0では、`$ref`と他のキーワード（`nullable`など）を同じレベルに書くと、`$ref`が他のキーワードを無視する
-- nullableな参照型を定義する場合は、以下のようにallOfを使用する：
-  ```yaml
-  field_name:
-    type: object
-    nullable: true
-    allOf:
-      - $ref: './path/to/schema.yaml#/components/schemas/SchemaName'
-    description: 説明文
-  ```
-- `nullable: true`を使用する際は必ず`type`フィールドも定義すること
-
-## Security Reminders
-- APIキーやシークレットを露出しない
-- 機密設定には環境変数を使用
-- コミット前にセキュリティへの影響を確認
+- Ruby / Rails → `rails-conventions` スキル
+- OpenAPI / Swagger → `openapi-conventions` スキル
