@@ -33,6 +33,7 @@ in {
     hugo
     gemini-cli
     herdr
+    hunk
 
     # Editor
     neovim
