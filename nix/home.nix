@@ -55,4 +55,9 @@ in {
     # GUI
     anki-bin
   ];
+
+  # hunk同梱のClaude Codeスキル（hunk sessionの操作方法をエージェントに教える）
+  # nix storeのパスはバージョンごとに変わるため、setup.shの手動symlinkではなく
+  # Nixで宣言的にリンクしてhunkの更新に自動追随させる
+  home.file.".claude/skills/hunk-review".source = "${pkgs.hunk}/skills/hunk-review";
 }

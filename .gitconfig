@@ -4,6 +4,13 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	# 差分ビューアhunk（diff検出付きpager。非diff出力はそのまま流れる）
+	# 出力が端末でない場合gitはpagerを起動しないため、スクリプトやエージェントからの実行には影響しない
+	pager = hunk pager
+[diff]
+	tool = hunk
+[difftool "hunk"]
+	cmd = hunk difftool \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [include]
