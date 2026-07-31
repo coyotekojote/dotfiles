@@ -80,6 +80,15 @@ if [ -d "$PRIVATE_REPO/claude/skills" ]; then
   done
 fi
 
+# herdr: work用のヘルパースクリプト(private側で管理)をリンク
+# ~/.config/herdr にはherdr自身が書くsocket/log/state類があるため、ディレクトリごとではなくファイル単位
+if [ "$PROFILE" = "work" ] && [ -d "$PRIVATE_REPO/herdr" ]; then
+  mkdir -p ~/.config/herdr
+  for helper in "$PRIVATE_REPO"/herdr/*; do
+    [ -f "$helper" ] && ln -sfn "$helper" ~/.config/herdr/"$(basename "$helper")"
+  done
+fi
+
 # Create ~/.claude/settings.local.json if not exists (machine-local, not git-managed)
 if [ ! -f "$HOME/.claude/settings.local.json" ]; then
   cat > "$HOME/.claude/settings.local.json" <<'EOF'
