@@ -1,0 +1,13 @@
+# hunk (https://www.hunk.dev/) — ターミナル差分ビューア
+# ~/.config/hunk/config.toml にsymlink（同ディレクトリのstate.jsonはhunkが書くためリンク対象外）
+
+theme = "auto"          # 端末の明暗に追随
+mode = "auto"           # auto / split / stack。端末幅で分割か上下積みかを自動選択
+line_numbers = true
+wrap_lines = false      # 長い行は折り返さず切り詰め（表示中に w で切替可）
+agent_notes = true      # エージェントの注釈を既定で表示
+tab_width = 2
+
+# 終了時に「表示設定を保存するか」を聞かれない
+# 保存するとこのファイルをhunkが書き換えてdotfilesに差分が出るため、設定はここで明示する
+prompt_save_view_preferences = false

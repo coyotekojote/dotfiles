@@ -36,6 +36,10 @@ ln -s ~/ghq/github.com/coyotekojote/dotfiles/mise ~/.config/
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/sheldon ~/.config/
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/nvim ~/.config/
 
+# hunk: 同ディレクトリにhunk自身が書くstate.jsonがあるため、ディレクトリごとではなくconfig.tomlのみリンク
+mkdir -p ~/.config/hunk
+ln -sfn ~/ghq/github.com/coyotekojote/dotfiles/hunk/config.toml ~/.config/hunk/config.toml
+
 # Create symlinks for Claude Code
 mkdir -p ~/.claude
 ln -s ~/ghq/github.com/coyotekojote/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
