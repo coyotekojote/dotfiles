@@ -3,6 +3,7 @@
 
 theme = "auto"          # 端末の明暗に追随
 mode = "auto"           # auto / split / stack。端末幅で分割か上下積みかを自動選択
+watch = true            # ファイル変更で自動リロード。エージェント併用では実質必須なので既定で有効化
 line_numbers = true
 wrap_lines = false      # 長い行は折り返さず切り詰め（表示中に w で切替可）
 agent_notes = true      # エージェントの注釈を既定で表示
