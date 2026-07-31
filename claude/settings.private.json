@@ -31,29 +31,6 @@
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"入力待ちです\" with title \"Claude Code\" sound name \"Glass\"'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"タスク完了\" with title \"Claude Code\" sound name \"Glass\"'"
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
     "command": "bun x ccusage statusline"
