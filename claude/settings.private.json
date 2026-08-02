@@ -30,7 +30,11 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "skillOverrides": {
+    "note-images-to-pdf": "off",
+    "add-book-to-read": "off",
+    "setup-serena-project": "off"
+  },
   "statusLine": {
     "type": "command",
     "command": "bun x ccusage statusline"
@@ -39,18 +43,15 @@
     "swift-lsp@claude-plugins-official": false,
     "code-review@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true
+    "feature-dev@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
+  "model": "opusplan[1m]",
   "language": "japanese",
   "effortLevel": "medium",
   "tui": "fullscreen",
   "editorMode": "vim",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "skillOverrides": {
-    "note-images-to-pdf": "off",
-    "add-book-to-read": "off",
-    "setup-serena-project": "off"
-  }
+  "skipAutoPermissionPrompt": true
 }
