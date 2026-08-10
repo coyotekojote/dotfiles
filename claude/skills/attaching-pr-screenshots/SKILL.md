@@ -20,36 +20,41 @@ description: UI・画面の変更を含むPRに、実際の画面スクリーン
 claude-in-chrome でアプリを開き、**変更が伝わる状態**まで操作する
 （新機能ならそれを有効にした状態。デフォルト表示と変わらない画面は撮らない）。
 
-状態ができたら、Chromeウィンドウをファイルに保存する:
+状態ができたら、`computer` の screenshot アクションに `save_to_disk: true` を付けて
+ビューポートをファイル保存する（返ってくるパスを控える）。
 
-```bash
-# 対象タブを最前面にしてから実行。ウィンドウ単位のキャプチャ（-o で影なし）
-osascript -e 'tell application "Google Chrome" to activate'
-screencapture -o -x -l "$(osascript -e 'tell application "Google Chrome" to id of window 1')" <scratchpad>/pr-screenshot.png
-```
-
-- 保存先はセッションのscratchpadディレクトリ（リポジトリ内に置かない）
+- ページ下部の余白が大きければ ffmpeg でクロップする:
+  `ffmpeg -y -i in.jpg -vf "crop=W:H:0:0" out.png`（sips の crop は中央基準なので不向き）
 - 撮った画像は Read で開いて、意図した状態が写っているか必ず確認する
 - 複数の状態（before/after、モード別）が有効なら複数枚撮る
 - 操作の流れ自体が本題なら `gif_creator` で録画GIFにしてもよい（GIFもPRに添付可能）
+- ホイールズーム等を dispatch する必要があれば `javascript_tool` で
+  `el.dispatchEvent(new WheelEvent('wheel', {deltaY: -100, clientX, clientY, bubbles: true, cancelable: true}))`
+  （`computer` の scroll はアプリ独自の wheel ハンドラに届かないことがある）
 
 ### 3. PRに添付する
 
-`gh` CLI は画像アップロードに対応していないので、ChromeでPRページを開いて添付する:
+`gh` CLI は画像アップロードに対応していない。ChromeでPRページを開き、
+**コメント欄のファイル入力でアップロードだけ行い、得られたURLを `gh pr edit` で本文に差し込む**のが確実:
 
 1. PRの `https://github.com/<owner>/<repo>/pull/<n>` を開く
-2. PR本文の「⋯」メニュー → Edit で編集モードにする
-3. `file_upload` ツールで textarea 付近の `input[type=file]` にPNGを渡す
-   （アップロード完了までmarkdownが `Uploading...` になるので、URLに置き換わるのを待つ）
-4. 画像markdownの前に「## スクリーンショット」等の見出しと1行説明を添えて Update comment
-5. 保存後、画像が表示されていることをスクロールして確認する
+2. `find` で新規コメント欄の `input[type=file]`（id: `fc-new_comment_field`）の ref を取り、
+   `file_upload` で画像を渡す
+3. `javascript_tool` で textarea の value を読み、`Uploading...` が
+   `https://github.com/user-attachments/assets/...` の `<img>` に置き換わるまで待つ
+4. URLを控えたら textarea を空にして input イベントを発火（下書きを残さない）
+5. `gh pr view <n> --json body` で本文を取り、「## スクリーンショット」見出し＋1行説明＋
+   `<img>` を挿入して `gh pr edit <n> --body-file` で更新
+6. PRページを再読み込みして画像が表示されていることを確認する
+
+（PR本文の「⋯ → Edit」をブラウザ操作で開く方法はメニューが開かないことがあり不安定。
+アップロードだけブラウザ、本文編集は gh、が堅い）
 
 ## うまくいかない時
 
-- **screencapture が黒画像/権限エラー**: ターミナルに画面収録権限がない。
-  ユーザーに「システム設定 → プライバシーとセキュリティ → 画面収録」での許可を依頼する
 - **claude-in-chrome が使えない**: Playwright にフォールバックする。
   `npx playwright screenshot --viewport-size=1440,900 <url> out.png`（要 `npx playwright install chromium`）。
   操作が必要な状態は小さなスクリプトで再現する
-- **file_upload で input が見つからない**: コメント欄にフォーカスした状態で探す。
-  それでも駄目なら、PRへの通常コメントとして添付する（本文編集にこだわらない）
+- **file_upload で input が見つからない / パスが拒否される**: 画像をセッションの
+  scratchpad 配下に置いてから渡す。input はコメント欄にフォーカスした状態で探す
+- **どうしても本文に入れられない**: PRへの通常コメントとして投稿する（本文編集にこだわらない）
