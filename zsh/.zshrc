@@ -104,3 +104,5 @@ eval "$(mise activate zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# safe-chain (インストーラが絶対パスで追記するため$HOMEに置き換え。未導入マシンでも起動が壊れないよう存在チェック)
+[ -f "$HOME/.safe-chain/scripts/init-posix.sh" ] && source "$HOME/.safe-chain/scripts/init-posix.sh"
