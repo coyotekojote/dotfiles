@@ -10,6 +10,7 @@ nix run home-manager/master -- switch --flake ~/ghq/github.com/coyotekojote/dotf
 
 # Homebrew（Nixにないものの補完用）
 brew install --cask ghostty
+brew install --cask stablyai/orca/orca  # AIエージェントを並列worktreeで走らせるADE
 brew install nodebrew
 
 # ax — AI時代のcurl（https://github.com/yusukebe/ax）
