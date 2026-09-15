@@ -1,3 +1,7 @@
+[env]
+# mise管理のRubyがmacOS同梱のCAバンドルを読めずTLS検証に失敗するため、Homebrewのca-certificatesを使う
+SSL_CERT_FILE = "/opt/homebrew/etc/ca-certificates/cert.pem"
+
 [settings]
 legacy_version_file = true
 idiomatic_version_file_enable_tools = ["ruby"]
